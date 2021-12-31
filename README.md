@@ -1,17 +1,29 @@
 ![astrum](https://apiwiz-assets.s3.us-west-2.amazonaws.com/astrum+Main+Logo+400x300.png)
 
-# Astrum
+## Astrum
 A flexible JSON/YAML linter for creating automated style guides, with baked in support for OpenAPI v2 &amp; v3.
-
 
 **OpenAPI** is now a widely-adopted method for describing web APIs. With that fact comes the pressure to validate these specifications are up to date, accurately constructed, and presented for optimal developer usage.
 
 Especially with the shift from OpenAPI v2 to v3, developers may require further assistance to ensure their specification matches the current v3 structure and format. Thankfully, **Astrum** allows developers to lint their API specification against **OpenAPI v3 & v2** as well as best practices and **custom rules**.
 
-- An easy to use customisable swagger linter which performs linting based on the linting rules configured
-- Supports OASv2.x and OASv3.0 Open API Specifications
-- Supports both JSON and YAML formats
-- Provides detailed information on the linting along with the line numbers at which the linting rules are applied on the specification file
+## 🎁 Features
+
+- An easy to use customisable **OpenAPI** linter which performs linting based on the linting rules configured.
+- Supports **OASv2.x** and **OASv3.0** Open API Specifications.
+- Supports both **JSON** and **YAML** formats.
+- **Ready-to-use Functions:** Built-in set of functions to help create custom rules. 
+- **Custom Functions**: Create custom functions for advanced use cases.
+- Provides detailed information on the linting along with the line numbers at which the linting rules are applied on the open specification file.
+
+# Overview
+
+- [Architecture](#architecture)
+- [Usage](#usage)
+- [astrum-cli](#astrum-cli)
+- [astrum-api](#astrum-api)
+- [Support](#support)
+- [License](#license)
 
 ## Architecture
 
@@ -28,7 +40,7 @@ Astrum is entirely built on Java and consists of three modules,
 
 ## Usage
 
-Pre-Requisite
+**Pre-Requisite**
 
 - JRE 11+ is required in the target machine. Steps to install -
   https://docs.oracle.com/goldengate/1212/gg-winux/GDRAD/java.htm#BGBFHBEA
@@ -82,9 +94,9 @@ Example Usages
 customRuleFilePath - Location of the rules file. Sample rule files can be found [here](/astrum-cli/src/main/resources/)
 
 
-## astrum-api
+## **astrum-api**
 
-Pre-Requisite
+**Pre-Requisite**
 
  - JDK 
  - MongoDB
@@ -98,17 +110,24 @@ Once the modules are built successfully, the astrum-api component will be create
 
 The API will be started in port 8080 and will expose the below end points to manage the rules.
 
-    POST /v1/swagger-linter/rules/create
-    PUT /v1/swagger-linter/rules/update/{ruleId}
-    DELETE /v1/swagger-linter/rules/delete/{ruleId}
-    GET /v1/swagger-linter/rules/get/{ruleId}
-    GET /v1/swagger-linter/rules/getAll
+    **POST**   /v1/swagger-linter/rules/create
+    **PUT**    /v1/swagger-linter/rules/update/{ruleId}
+    **DELETE** /v1/swagger-linter/rules/delete/{ruleId}
+    **GET**    /v1/swagger-linter/rules/get/{ruleId}
+    **GET**    /v1/swagger-linter/rules/getAll
   
 The lint endpoint is used to lint a swagger specification file and based on the managed rules
 
-    POST /v1/swagger-linter/rules/lint
+    **POST** /v1/swagger-linter/rules/lint
 
 The format endpoint is used to format the input swagger file to match with the line number generated in the linting report
 
-    POST /v1/swagger-linter/rules/format
+    **POST** /v1/swagger-linter/rules/format
 
+## **Support**
+    
+If you need help using Astrum or have any questions, please use GitHub Discussions.
+
+## **License**
+
+Astrum is 100% free and open-source, under [Apache License 2.0](https://github.com/apiwizlabs/astrum/blob/main/LICENSE).
