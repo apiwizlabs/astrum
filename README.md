@@ -31,11 +31,11 @@ Especially with the shift from OpenAPI v2 to v3, developers may require further 
 Astrum is entirely built on Java and consists of three modules,
 
 - astrum-core
-    - The module contains the core logic responsible for linting the OAS file
+    - The module contains the core logic responsible for linting the OAS file.
 -  astrum-api
-    - Provides an Rest API to store the linting rules which will be used to lint the OAS specification
+    - Provides an Rest API to store the linting rules which will be used to lint the OAS specification.
 - astrum-cli
-    - The astrum-cli can be used as a command-line interface which takes up a OAS specification file and runs linting rules on it
+    - The astrum-cli can be used as a command-line interface which takes up a OAS specification file and runs linting rules on it.
 
 ![Architecture](resources/astrum-arch.png)
 
