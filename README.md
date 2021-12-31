@@ -53,7 +53,7 @@ This builds all the three modules of astrum in the target machine.
 
 ## 🧰 astrum-cli
 
-Once the modules are built successfully, the astrum-cli component will be created as 'astrum-cli-0.0.1-SNAPSHOT.jar' in the target directory. Go to the directory astrum-cli/target and run the below command to see the options supported by astrum-cli
+Once the modules are built successfully, the astrum-cli component will be created as `astrum-cli-0.0.1-SNAPSHOT.jar` in the target directory. Go to the directory `astrum-cli/target` and run the below command to see the options supported by **astrum-cli**.
 
 > java -jar astrum-cli-0.0.1-SNAPSHOT.jar
 
