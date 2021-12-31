@@ -34,7 +34,7 @@ Astrum is entirely built on Java and consists of three modules,
 -  astrum-api
     - Provides an Rest API to store the linting rules which will be used to lint the OAS specification
 - astrum-cli
-    - The astrum-cli can be used as a command line interface which takes up a OAS specification file and runs linting rules on it
+    - The astrum-cli can be used as a command-line interface which takes up a OAS specification file and runs linting rules on it
 
 ![Architecture](resources/astrum-arch.png)
 
@@ -95,14 +95,14 @@ Example Usages
  - JDK 
  - MongoDB
 
-MongoDB is used to store the rules created using the rest end points
+MongoDB is used to store the rules created using the rest endpoints
 
 
-Once the modules are built successfully, the astrum-api component will be created as 'astrum-api-0.0.1-SNAPSHOT.jar' in the target directory. Go to the directory astrum-api/target and run the below command to start up the api
+Once the modules are built successfully, the astrum-api component will be created as 'astrum-api-0.0.1-SNAPSHOT.jar' in the target directory. Go to the directory astrum-api/target and run the below command to start up the API.
 
  > java -jar astrum-api-0.0.1-SNAPSHOT.jar
 
-The API will be started in port 8080 and will expose the below end points to manage the rules.
+The API will be started in port 8080 and will expose the below endpoints to manage the rules.
 
     **POST**   /v1/swagger-linter/rules/create
     **PUT**    /v1/swagger-linter/rules/update/{ruleId}
