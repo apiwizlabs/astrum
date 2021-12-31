@@ -16,7 +16,7 @@ Especially with the shift from OpenAPI v2 to v3, developers may require further 
 - **Custom Functions**: Create custom functions for advanced use cases.
 - Provides detailed information on the linting along with the line numbers at which the linting rules are applied on the open specification file.
 
-# Overview
+# ⌛ Overview
 
 - [Architecture](#architecture)
 - [Usage](#usage)
@@ -25,7 +25,7 @@ Especially with the shift from OpenAPI v2 to v3, developers may require further 
 - [Support](#support)
 - [License](#license)
 
-## Architecture
+## ⚙️ Architecture
 
 Astrum is entirely built on Java and consists of three modules,
 
@@ -38,7 +38,7 @@ Astrum is entirely built on Java and consists of three modules,
 
 ![Architecture](resources/astrum-arch.png)
 
-## Usage
+## 🪝 Usage
 
 **Pre-Requisite**
 
@@ -53,7 +53,7 @@ Astrum is entirely built on Java and consists of three modules,
 
 This builds all the three modules of astrum in the target machine.
 
-## astrum-cli
+## 🧰 astrum-cli
 
 Once the modules are built successfully, the astrum-cli component will be created as 'astrum-cli-0.0.1-SNAPSHOT.jar' in the target directory. Go to the directory astrum-cli/target and run the below command to see the options supported by astrum-cli
 
@@ -94,7 +94,7 @@ Example Usages
 customRuleFilePath - Location of the rules file. Sample rule files can be found [here](/astrum-cli/src/main/resources/)
 
 
-## **astrum-api**
+## 🔗 astrum-api
 
 **Pre-Requisite**
 
@@ -124,10 +124,10 @@ The format endpoint is used to format the input swagger file to match with the l
 
     **POST** /v1/swagger-linter/rules/format
 
-## **Support**
+## 🤝 **Support**
     
 If you need help using Astrum or have any questions, please use GitHub Discussions.
 
-## **License**
+## 🪪 **License**
 
 Astrum is 100% free and open-source, under [Apache License 2.0](https://github.com/apiwizlabs/astrum/blob/main/LICENSE).
