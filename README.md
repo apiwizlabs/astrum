@@ -1,13 +1,14 @@
 ![astrum](https://apiwiz-assets.s3.us-west-2.amazonaws.com/astrum+Main+Logo+400x300.png)
 
-## Astrum
+**Astrum**
+
 A flexible JSON/YAML linter for creating automated style guides, with baked in support for OpenAPI v2 &amp; v3.
 
 **OpenAPI** is now a widely-adopted method for describing web APIs. With that fact comes the pressure to validate these specifications are up to date, accurately constructed, and presented for optimal developer usage.
 
 Especially with the shift from OpenAPI v2 to v3, developers may require further assistance to ensure their specification matches the current v3 structure and format. Thankfully, **Astrum** allows developers to lint their API specification against **OpenAPI v3 & v2** as well as best practices and **custom rules**.
 
-## 🎁 Features
+🎁 **Features**
 
 - An easy to use customisable **OpenAPI** linter which performs linting based on the linting rules configured.
 - Supports **OASv2.x** and **OASv3.0** Open API Specifications.
@@ -16,7 +17,7 @@ Especially with the shift from OpenAPI v2 to v3, developers may require further 
 - **Custom Functions**: Create custom functions for advanced use cases.
 - Provides detailed information on the linting along with the line numbers at which the linting rules are applied on the open specification file.
 
-# ⌛ Overview
+## ⌛ Overview
 
 - [Architecture](#architecture)
 - [Usage](#usage)
