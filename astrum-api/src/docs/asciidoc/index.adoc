@@ -1,0 +1,19 @@
+= Sample API Documentation
+
+== Introduction
+This is an example of Spring REST Docs generated documentation.
+
+== Persons API
+Collection of CRUD API endpoints used to manipulate persons registered in the application.
+
+=== Get Person By Id
+Obtains a specific person registered in the application by its unique identifier.
+
+==== Sample Request
+include::{snippets}/rules/get-by-id/http-request.adoc[]
+
+==== Sample Response
+include::{snippets}/rules/get-by-id/http-response.adoc[]
+
+==== CURL sample
+include::{snippets}/rules/get-by-id/curl-request.adoc[]

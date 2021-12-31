@@ -1,0 +1,94 @@
+[
+  {
+    "name": "Operation Id should be Camel Case",
+    "description": "Operation Id should be Camel Case ",
+    "oasVersion": "3.0",
+    "status": "ACTIVE",
+    "objectPath": "$.paths.*.*.operationId",
+    "severity": "INFO",
+    "ruleType": {
+      "type": "REGEX",
+      "operation": "MATCHES",
+      "regex": "^[a-zA-Z]*$"
+    }
+  },
+  {
+    "name": "All Schemes Should be https",
+    "description": "All Schemes Should be https",
+    "oasVersion": 3.0,
+    "status": "ACTIVE",
+    "objectPath": "$.servers.*.url",
+    "severity": "WARN",
+    "ruleType": {
+      "type": "ASSERT",
+      "operation": "contains",
+      "value": "https"
+    }
+  },
+  {
+    "name": "Info object should contain contact information",
+    "description": "Info object should contain contact information ",
+    "oasVersion": "3.0",
+    "status": "ACTIVE",
+    "objectPath": "$.info.contact",
+    "severity": "WARN",
+    "ruleType": {
+      "type": "ASSERT",
+      "operation": "present"
+    }
+  },
+  {
+    "name": "Info object should contain description",
+    "description": "Info object should contain description",
+    "oasVersion": "3.0",
+    "status": "ACTIVE",
+    "objectPath": "$.info.description",
+    "severity": "WARN",
+    "ruleType": {
+      "type": "ASSERT",
+      "operation": "present"
+    }
+  },
+  {
+    "name": "No <script> tags in title",
+    "description": "The <script> tag should not be present in title",
+    "oasVersion": "3.0",
+    "status": "ACTIVE",
+    "objectPath": "$.info.description",
+    "severity": "ERROR",
+    "ruleType": {
+      "type": "ASSERT",
+      "operation": "doesNotContain",
+      "value": "<script>"
+    }
+  },
+  {
+    "name": "Responses should contain Status Code",
+    "description": "Responses should contain Status Code",
+    "oasVersion": "3.0",
+    "status": "ACTIVE",
+    "objectPath": "$.paths.*.post.responses.*~",
+    "severity": "ERROR",
+    "ruleType": {
+      "type": "ASSERT",
+      "operation": "present"
+    }
+  },
+
+  {
+    "id": "61977c773dab41680acb5fac",
+    "name": "Server URL with trailing Slash",
+    "description": "Server URL with trailing Slash",
+    "oasVersion": "3.0",
+    "status": "ACTIVE",
+    "objectPath": "$.servers.*.url",
+    "severity": "INFO",
+    "ruleType": {
+      "type": "REGEX",
+      "operation": "MATCHES",
+      "regex": ".*[./]$"
+    }
+  }
+
+
+]

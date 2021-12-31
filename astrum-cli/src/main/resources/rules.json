@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Operation Id should be Camel Case",
+    "description": "Operation Id should be Camel Case ",
+    "oasVersion": "2.0",
+    "status": "ACTIVE",
+    "objectPath": "$.paths.*.*.operationId",
+    "severity": "INFO",
+    "ruleType": {
+      "type": "REGEX",
+      "operation": "MATCHES",
+      "regex": "^[a-zA-Z]*$"
+    }
+  },
+  {
+    "name": "All Schemes Should be https",
+    "description": "All Schemes Should be https",
+    "oasVersion": 2.0,
+    "status": "ACTIVE",
+    "objectPath": "$.schemes.*",
+    "severity": "WARN",
+    "ruleType": {
+      "type": "ASSERT",
+      "operation": "equalTo",
+      "value": "https"
+    }
+  },
+  {
+    "name": "Info object should contain contact information",
+    "description": "Info object should contain contact information ",
+    "oasVersion": "2.0",
+    "status": "ACTIVE",
+    "objectPath": "$.info.contact",
+    "severity": "WARN",
+    "ruleType": {
+      "type": "ASSERT",
+      "operation": "present"
+    }
+  },
+  {
+    "name": "Info object should contain description",
+    "description": "Info object should contain description",
+    "oasVersion": "2.0",
+    "status": "ACTIVE",
+    "objectPath": "$.info.description",
+    "severity": "WARN",
+    "ruleType": {
+      "type": "ASSERT",
+      "operation": "present"
+    }
+  },
+  {
+    "name": "No <script> tags in title",
+    "description": "The <script> tag should not be present in title",
+    "oasVersion": "2.0",
+    "status": "ACTIVE",
+    "objectPath": "$.info.title",
+    "severity": "ERROR",
+    "ruleType": {
+      "type": "ASSERT",
+      "operation": "doesNotContain",
+      "value": "<script>"
+    }
+  }
+]

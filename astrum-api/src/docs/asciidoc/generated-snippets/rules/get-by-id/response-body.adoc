@@ -1,0 +1,4 @@
+[source,options="nowrap"]
+----
+{"id":null,"name":null,"description":null,"oasVersion":null,"status":null,"objectPath":null,"severity":null,"ruleType":null,"cts":0,"mts":0}
+----

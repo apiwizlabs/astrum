@@ -1,0 +1,8 @@
+[source,http,options="nowrap"]
+----
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 140
+
+{"id":null,"name":null,"description":null,"oasVersion":null,"status":null,"objectPath":null,"severity":null,"ruleType":null,"cts":0,"mts":0}
+----
