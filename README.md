@@ -52,6 +52,8 @@ Astrum is entirely built on Java and consists of three modules,
 
 This builds all the three modules of astrum in the target machine.
 
+![astrum-intro](https://user-images.githubusercontent.com/85753274/147901053-11574069-b1a3-4f57-823d-110af0b243fc.gif)
+
 ## 🧰 astrum-cli
 
 Once the modules are built successfully, the astrum-cli component will be created as `astrum-cli-0.0.1-SNAPSHOT.jar` in the target directory. Go to the directory `astrum-cli/target` and run the below command to see the options supported by **astrum-cli**.
