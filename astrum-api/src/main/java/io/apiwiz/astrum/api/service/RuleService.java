@@ -49,8 +49,8 @@ public class RuleService {
     }
 
     @ExceptionHandler(Exception.class)
-    public void update(String ruleId, Rule rule) {
-        Rule existingRule = mongoTemplate.findById(ruleId, Rule.class, SWAGGER_LINTER_RULES_COLLECTION);
+    public void update(Rule rule) {
+        Rule existingRule = mongoTemplate.findById(rule.getId(), Rule.class, SWAGGER_LINTER_RULES_COLLECTION);
         if (existingRule != null) {
             existingRule.setMts(System.currentTimeMillis());
             existingRule.setRuleType(rule.getRuleType());
@@ -60,7 +60,6 @@ public class RuleService {
             existingRule.setName(rule.getName());
             existingRule.setOasVersion(rule.getOasVersion());
             mongoTemplate.save(existingRule, SWAGGER_LINTER_RULES_COLLECTION);
-
         }
     }
 

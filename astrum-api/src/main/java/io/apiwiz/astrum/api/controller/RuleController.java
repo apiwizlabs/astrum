@@ -15,49 +15,48 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/v1/swagger-linter/rules/")
+@RequestMapping("/v1/astrum/")
 public class RuleController {
 
 	@Autowired
     RuleService ruleService;
 
-
-	@RequestMapping(value = "/create", method = RequestMethod.POST)
-	public ResponseEntity<HttpStatus> createRules(@Valid @RequestBody Rule rule) {
+	@RequestMapping(value = "/rule", method = RequestMethod.POST)
+	public ResponseEntity<HttpStatus> createRules(@RequestBody Rule rule) {
 		ruleService.save(rule);
 		return new ResponseEntity(HttpStatus.CREATED);
 
 	}
 
-	@RequestMapping(value = "/update/{ruleId}", method = RequestMethod.PUT)
-	public ResponseEntity<HttpStatus> updateRules(@PathVariable String ruleId, @RequestBody Rule rule) {
-		 ruleService.update(ruleId, rule);
+	@RequestMapping(value = "/rule", method = RequestMethod.PUT)
+	public ResponseEntity<HttpStatus> updateRules(@RequestBody Rule rule) {
+		 ruleService.update(rule);
 		 return new ResponseEntity(HttpStatus.ACCEPTED);
 	}
 
-	@RequestMapping(value = "/delete/{ruleId}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/rule/{ruleId}", method = RequestMethod.DELETE)
 	public ResponseEntity<HttpStatus> deleteRules(@PathVariable String ruleId) {
 		ruleService.delete(ruleId);
 		return new ResponseEntity(HttpStatus.ACCEPTED);
 
 	}
 
-	@RequestMapping(value = "/get/{ruleId}", method = RequestMethod.GET)
+	@RequestMapping(value = "/rule/{ruleId}", method = RequestMethod.GET)
 	public Rule getRuleByIdOrName(@PathVariable String ruleId) {
 		return ruleService.getRuleById(ruleId);
 	}
 
-	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
+	@RequestMapping(value = "/rule/", method = RequestMethod.GET)
 	private ResponseEntity<List<Rule>> getAllRules() {
 		return new ResponseEntity<>(ruleService.getAllRules(), HttpStatus.OK);
 	}
 
-	@RequestMapping(method = { RequestMethod.POST }, value = "/lint", consumes = { "multipart/form-data" })
+	@RequestMapping(value = "/lint", method = RequestMethod.POST, consumes = { "multipart/form-data" })
 	private ResponseEntity<?> lint(@RequestPart(value = "swaggerFile") MultipartFile swaggerFile) {
 		return new ResponseEntity<>(ruleService.lint(swaggerFile), HttpStatus.OK);
 	}
 
-	@RequestMapping(method = { RequestMethod.POST }, value = "/format", consumes = { "multipart/form-data" })
+	@RequestMapping(value = "/format", method = RequestMethod.POST, consumes = { "multipart/form-data" })
 	private ResponseEntity<?> formatSwaggerFile(@RequestPart(value = "swaggerFile") MultipartFile swaggerFile) {
 		return new ResponseEntity<>(ruleService.format(swaggerFile), HttpStatus.OK);
 	}
