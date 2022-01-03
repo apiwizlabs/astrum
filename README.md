@@ -107,19 +107,30 @@ Once the modules are built successfully, the astrum-api component will be create
 
 The API will be started in port 8080 and will expose the below endpoints to manage the rules.
 
-create    **POST**   /v1/astrum/rule
-update    **PUT**    /v1/astrum/rule
-delete    **DELETE** /v1/astrum/rule/{ruleId}
-get       **GET**    /v1/astrum/rule/{ruleId}
-get all   **GET**    /v1/astrum/rule/
+Create Rule
+> **POST**   /v1/astrum/rule 
+
+Update Rule
+> **PUT**    /v1/astrum/rule
+
+Delete Rule
+> **DELETE** /v1/astrum/rule/{ruleId}
+
+Get Rule
+> **GET**    /v1/astrum/rule/{ruleId}
+
+Get All Rule 
+> **GET**    /v1/astrum/rule/
+
   
 The lint endpoint is used to lint a swagger specification file and based on the managed rules
 
-    **POST** /v1/astrum/lint
+> **POST** /v1/astrum/lint
+
 
 The format endpoint is used to format the input swagger file to match with the line number generated in the linting report
 
-    **POST** /v1/astrum/format
+> **POST** /v1/astrum/format
 
 ## 🤝 **Support**
     
