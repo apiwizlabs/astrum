@@ -52,7 +52,7 @@ public class RuleControllerTest {
         when(ruleService.getRuleById(Mockito.anyString())).thenReturn(new Rule());
 
 
-        String url = "/v1/swagger-linter/rules/get/1";
+        String url = "/v1/astrum/rule/1";
         this.mockMvc.perform(
                         RestDocumentationRequestBuilders
                                 .get(url))

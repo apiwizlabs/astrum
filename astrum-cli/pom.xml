@@ -5,11 +5,33 @@
     <parent>
         <artifactId>astrum</artifactId>
         <groupId>io.apiwiz.astrum</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>astrum-cli</artifactId>
+
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>
+        A flexible JSON/YAML linter for creating automated style guides, with baked in support for OpenAPI v2 and v3.
+    </description>
+    <url>https://github.com/apiwizlabs/astrum</url>
+
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+            <url>https://github.com/apiwizlabs/astrum/blob/main/LICENSE</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Balaji Vijayan</name>
+            <email>balaji.vijayan@itorix.com</email>
+            <organization>Apiwiz</organization>
+            <organizationUrl>https://apiwiz.io</organizationUrl>
+        </developer>
+    </developers>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -26,7 +48,7 @@
         <dependency>
             <groupId>io.apiwiz.astrum</groupId>
             <artifactId>astrum-core</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.1</version>
         </dependency>
 
     </dependencies>
@@ -98,5 +120,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>
