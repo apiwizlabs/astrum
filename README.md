@@ -53,7 +53,10 @@ Astrum is entirely built on Java and consists of three modules,
 
 This builds all the three modules of astrum in the target machine.
 
-![astrum-intro](https://user-images.githubusercontent.com/85753274/147901053-11574069-b1a3-4f57-823d-110af0b243fc.gif)
+![astrum-part1](https://user-images.githubusercontent.com/85753274/149303744-8ad57d78-cd17-4dbb-a4fb-2682349bfbcd.gif)
+![astrum-part2](https://user-images.githubusercontent.com/85753274/149303793-cf124f62-284b-48cc-978d-f3af40ac9e04.gif)
+
+
 
 ## 🧰 astrum-cli
 
