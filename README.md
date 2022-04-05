@@ -49,7 +49,7 @@ Astrum is entirely built on Java and consists of three modules,
 - Checkout the astrum code from the [repository](https://github.com/apiwizlabs/astrum) to local machine
 - Build the astrum modules. Navigate to the folder, **astrum** and run the below command
 
-  > mvn clean install
+  > mvn clean package
 
 This builds all the three modules of astrum in the target machine.
 
