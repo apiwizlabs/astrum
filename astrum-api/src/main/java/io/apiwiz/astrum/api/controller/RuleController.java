@@ -19,7 +19,7 @@ import java.util.List;
 public class RuleController {
 
 	@Autowired
-    RuleService ruleService;
+    private RuleService ruleService;
 
 	@RequestMapping(value = "/rule", method = RequestMethod.POST)
 	public ResponseEntity<HttpStatus> createRules(@RequestBody Rule rule) {
