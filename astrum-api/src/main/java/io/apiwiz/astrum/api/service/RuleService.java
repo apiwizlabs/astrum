@@ -90,8 +90,12 @@ public class RuleService {
 
     @ExceptionHandler(Exception.class)
     private void isValid(String oasVersion) {
+    	if(oasVersion==null )
+    	{
+    		 throw new RequestNotValidException("Oas Version is Null");
+    	}
         if (!oasVersion.equals("2.0") && !oasVersion.equals("3.0")) {
-            throw new RequestNotValidException("Invalid oasVersion: " + oasVersion);
+            throw new RequestNotValidException("Invalid oas Version: " + oasVersion);
         }
     }
 
