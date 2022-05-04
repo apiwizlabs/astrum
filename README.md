@@ -85,7 +85,7 @@ Example Usages
 
 2. Using astrum-cli, lint a OAS specification and output the lint report to a output file using the custom rules
 
-   `java -jar astrum-cli-0.0.1-SNAPSHOT.jar -swaggerFile={OASFilePath} -output={outputFilePath}/output.json/output.json -r={customRuleFilePath}/rules.json`
+   `java -jar astrum-cli-0.1.jar -swaggerFile={OASFilePath} -output={outputFilePath}/output.json/output.json -r={customRuleFilePath}/rules.json`
 
 > customRuleFilePath: Location of the rules file. Sample rule files can be found [here](/astrum-cli/src/main/resources/)
 
@@ -99,7 +99,7 @@ Example Usages
 MongoDB is used to store the rules created using the rest endpoints
 
 
-Once the modules are built successfully, the astrum-api component will be created as 'astrum-api-0.0.1-SNAPSHOT.jar' in the target directory. Go to the directory astrum-api/target and run the below command to start up the API.
+Once the modules are built successfully, the astrum-api component will be created as 'astrum-api-0.1.jar' in the target directory. Go to the directory astrum-api/target and run the below command to start up the API.
 
 > java -jar astrum-api-0.1.jar
 The API will be started in port 8080 and will expose the below endpoints to manage the rules.
