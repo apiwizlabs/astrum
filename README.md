@@ -60,15 +60,17 @@ This builds all the three modules of astrum in the target machine.
 
 ## 🧰 astrum-cli
 
-Once the modules are built successfully, the astrum-cli component will be created as `astrum-cli-0.0.1-SNAPSHOT.jar` in the target directory. Go to the directory `astrum-cli/target` and run the below command to see the options supported by **astrum-cli**.
+Once the modules are built successfully, the astrum-cli component will be created as `astrum-cli-0.1.jar` in the target directory. Go to the directory `astrum-cli/target` and run the below command to see the options supported by **astrum-cli**.
 
-> java -jar astrum-cli-0.0.1-SNAPSHOT.jar
+> java -jar astrum-cli-0.1.jar
 
 This will output the parameters and options that are supported by astrum-cli like below.
 
--f, -sf, -swaggerFile=<OASFile>  The OAS file to lint       -h, --help                       Show this help message and exit.  
--o, -output=<outputFile>         The output file in which the linting report will be generated.       -p, -prettyPrint                 The input OAS file will be pretty printed. This will allow to reference the line numbers of the  
-linting report.       -r, -ruleFile=<rulesFile>        The custom rules file based on which the OAS file will be linted.                      
+-f, -sf, -swaggerFile=<OASFile>  The OAS file to lint       
+-h, --help                       Show this help message and exit.  
+-o, -output=<outputFile>         The output file in which the linting report will be generated.       
+-p, -prettyPrint                 The input OAS file will be pretty printed. This will allow to reference the line numbers of the linting report.       
+-r, -ruleFile=<rulesFile>        The custom rules file based on which the OAS file will be linted.                      
 -skipLint                        The linting will be skipped and the input OAS file will be pretty printed in console.  
 -V, --version                    Print version information and exit.  
 **The astrum-cli by default formats the input OAS specification file and writes it to the current path. This formatted file can be used to match the line numbers in the linting report.**
@@ -77,7 +79,7 @@ Example Usages
 
 1. Using astrum-cli, lint a swagger specification and output the lint report to a output file using the default rules
 
-   `java -jar astrum-cli-0.0.1-SNAPSHOT.jar -swaggerFile={OASFilePath} -output={outputFilePath}/output.json`
+   `java -jar astrum-cli-0.1.jar -swaggerFile={OASFilePath} -output={outputFilePath}/output.json`
 
 `swaggerSpecificationFilePath: Location of OAS file in local Machine`    `outputFilePath: Location of output file path which will contain the Linting results`
 
@@ -99,7 +101,7 @@ MongoDB is used to store the rules created using the rest endpoints
 
 Once the modules are built successfully, the astrum-api component will be created as 'astrum-api-0.0.1-SNAPSHOT.jar' in the target directory. Go to the directory astrum-api/target and run the below command to start up the API.
 
-> java -jar astrum-api-0.0.1-SNAPSHOT.jar  
+> java -jar astrum-api-0.1.jar
 The API will be started in port 8080 and will expose the below endpoints to manage the rules.
 
 Create Rule
