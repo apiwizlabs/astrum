@@ -1,5 +1,6 @@
 package io.apiwiz.astrum.cli.dao;
 
+
 import io.apiwiz.astrum.core.util.SwaggerLinterUtil;
 import io.apiwiz.astrum.rule.dao.SwaggerLinterRulesRepo;
 import io.apiwiz.astrum.rule.model.AssertionRule;
@@ -9,7 +10,10 @@ import io.apiwiz.astrum.rule.model.Rule;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class SwaggerLinterRulesInMemRepo implements SwaggerLinterRulesRepo {
+
 
     private List<Rule> listOfRules;
 

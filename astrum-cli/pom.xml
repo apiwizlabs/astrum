@@ -1,125 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>astrum</artifactId>
-        <groupId>io.apiwiz.astrum</groupId>
-        <version>0.1</version>
-    </parent>
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<artifactId>astrum</artifactId>
+		<groupId>io.apiwiz.astrum</groupId>
+		<version>0.1</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
 
-    <artifactId>astrum-cli</artifactId>
+	<artifactId>astrum-cli</artifactId>
 
-    <name>${project.groupId}:${project.artifactId}</name>
-    <description>
+	<name>${project.groupId}:${project.artifactId}</name>
+	<description>
         A flexible JSON/YAML linter for creating automated style guides, with baked in support for OpenAPI v2 and v3.
     </description>
-    <url>https://github.com/apiwizlabs/astrum</url>
+	<url>https://github.com/apiwizlabs/astrum</url>
 
-    <licenses>
-        <license>
-            <name>Apache License 2.0</name>
-            <url>https://github.com/apiwizlabs/astrum/blob/main/LICENSE</url>
-        </license>
-    </licenses>
+	<licenses>
+		<license>
+			<name>Apache License 2.0</name>
+			<url>https://github.com/apiwizlabs/astrum/blob/main/LICENSE</url>
+		</license>
+	</licenses>
 
-    <developers>
-        <developer>
-            <name>Balaji Vijayan</name>
-            <email>balaji.vijayan@itorix.com</email>
-            <organization>Apiwiz</organization>
-            <organizationUrl>https://apiwiz.io</organizationUrl>
-        </developer>
-    </developers>
+	<developers>
+		<developer>
+			<name>Balaji Vijayan</name>
+			<email>balaji.vijayan@itorix.com</email>
+			<organization>Apiwiz</organization>
+			<organizationUrl>https://apiwiz.io</organizationUrl>
+		</developer>
+	</developers>
 
-    <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-    </properties>
+	<properties>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+	</properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>info.picocli</groupId>
-            <artifactId>picocli</artifactId>
-            <version>4.6.2</version>
-        </dependency>
+	<dependencies>
+		<dependency>
+			<groupId>info.picocli</groupId>
+			<artifactId>picocli</artifactId>
+			<version>4.6.2</version>
+		</dependency>
 
-        <dependency>
-            <groupId>io.apiwiz.astrum</groupId>
-            <artifactId>astrum-core</artifactId>
-            <version>0.1</version>
-        </dependency>
+		<dependency>
+			<groupId>io.apiwiz.astrum</groupId>
+			<artifactId>astrum-core</artifactId>
+			<version>0.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>3.9.0</version>
+			<scope>test</scope>
+		</dependency>
 
-    </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>info.picocli</groupId>
-                            <artifactId>picocli-codegen</artifactId>
-                            <version>4.2.0</version>
-                        </path>
-                    </annotationProcessorPaths>
-                </configuration>
-            </plugin>
-
-<!--            <plugin>-->
-<!--                <groupId>org.graalvm.nativeimage</groupId>-->
-<!--                <artifactId>native-image-maven-plugin</artifactId>-->
-<!--                <version>20.0.0</version>-->
-<!--                <configuration>-->
-<!--                    <mainClass>SwaggerLinterCLIApp</mainClass>-->
-<!--                    <imageName>astrum-cli</imageName>-->
-<!--                    <buildArgs>-->
-<!--                        &#45;&#45;no-fallback-->
-<!--                        &#45;&#45;report-unsupported-elements-at-runtime-->
-<!--                        &#45;&#45;allow-incomplete-classpath-->
-<!--                        -H:+ReportExceptionStackTraces-->
-<!--                    </buildArgs>-->
-<!--                    <skip>false</skip>-->
-<!--                </configuration>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <goals>-->
-<!--                            <goal>native-image</goal>-->
-<!--                        </goals>-->
-<!--                        <phase>verify</phase>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-junit-jupiter</artifactId>
+			<version>3.9.0</version>
+			<scope>test</scope>
+		</dependency>
 
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.1</version>
-                <executions>
-                    <!-- Run shade goal on package phase -->
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <transformers>
-                                <!-- add Main-Class to manifest file -->
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>io.apiwiz.astrum.cli.AstrumCLIApp</mainClass>
-                                </transformer>
-                            </transformers>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>info.picocli</groupId>
+							<artifactId>picocli-codegen</artifactId>
+							<version>4.2.0</version>
+						</path>
+					</annotationProcessorPaths>
+				</configuration>
+			</plugin>
+
+			<!--            <plugin>-->
+			<!--                <groupId>org.graalvm.nativeimage</groupId>-->
+			<!--                <artifactId>native-image-maven-plugin</artifactId>-->
+			<!--                <version>20.0.0</version>-->
+			<!--                <configuration>-->
+			<!--                    <mainClass>SwaggerLinterCLIApp</mainClass>-->
+			<!--                    <imageName>astrum-cli</imageName>-->
+			<!--                    <buildArgs>-->
+			<!--                        &#45;&#45;no-fallback-->
+			<!--                        &#45;&#45;report-unsupported-elements-at-runtime-->
+			<!--                        &#45;&#45;allow-incomplete-classpath-->
+			<!--                        -H:+ReportExceptionStackTraces-->
+			<!--                    </buildArgs>-->
+			<!--                    <skip>false</skip>-->
+			<!--                </configuration>-->
+			<!--                <executions>-->
+			<!--                    <execution>-->
+			<!--                        <goals>-->
+			<!--                            <goal>native-image</goal>-->
+			<!--                        </goals>-->
+			<!--                        <phase>verify</phase>-->
+			<!--                    </execution>-->
+			<!--                </executions>-->
+			<!--            </plugin>-->
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>3.2.1</version>
+				<executions>
+					<!-- Run shade goal on package phase -->
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<transformers>
+								<!-- add Main-Class to manifest file -->
+								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>io.apiwiz.astrum.cli.AstrumCLIApp</mainClass>
+								</transformer>
+							</transformers>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
 
 </project>

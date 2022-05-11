@@ -6,11 +6,14 @@ import io.apiwiz.astrum.core.model.SwaggerLintingReport;
 import io.apiwiz.astrum.rule.dao.SwaggerLinterRulesStaticRepo;
 import io.apiwiz.astrum.rule.impl.SwaggerLinterHelper;
 import com.jayway.jsonpath.JsonPath;
-import org.junit.Test;
+
 
 import java.io.IOException;
 import java.util.List;
-
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
+@RunWith(MockitoJUnitRunner.class)
 public class SwaggerParserTest {
 
 	@Test
@@ -74,7 +77,6 @@ public class SwaggerParserTest {
 
 
 	}
-
 
 
 }

@@ -89,7 +89,7 @@ public class RuleService {
     }
 
     @ExceptionHandler(Exception.class)
-    private void isValid(String oasVersion) {
+    public void isValid(String oasVersion) {
     	if(oasVersion==null )
     	{
     		 throw new RequestNotValidException("Oas Version is Null");

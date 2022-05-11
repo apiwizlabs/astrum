@@ -1,0 +1,19 @@
+[ {
+  "ruleName" : "Server URL with trailing Slash",
+  "message" : "Server URL with trailing Slash",
+  "lineNumber" : 11,
+  "severity" : "info"
+}, {
+  "ruleName" : "All Schemes Should be https",
+  "message" : "All Schemes Should be https",
+  "lineNumber" : 11,
+  "severity" : "warn"
+}, {
+  "ruleName" : "Info object should contain contact information",
+  "message" : "Info object should contain contact information ",
+  "severity" : "warn"
+}, {
+  "ruleName" : "Info object should contain description",
+  "message" : "Info object should contain description",
+  "severity" : "warn"
+} ]
