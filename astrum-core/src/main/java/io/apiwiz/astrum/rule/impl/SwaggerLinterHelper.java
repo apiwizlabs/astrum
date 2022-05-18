@@ -87,6 +87,12 @@ public class SwaggerLinterHelper {
 				}
 			}
 
+			if(findings != null && findings.size() == 0) {
+				if(operation.equals(AssertOperation.present)) {
+					generateLintingReport(reportList, rule, null);
+				}
+			}
+
 			if(findings != null) {
 				for (JsonNode finding : findings) {
 

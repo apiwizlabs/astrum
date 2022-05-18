@@ -1,0 +1,130 @@
+[
+  {
+    "name": "The OAS Specification should contain description about the API",
+    "description": "Info object should contain description",
+    "oasVersion": "3.0",
+    "status": "ACTIVE",
+    "objectPath": "$.info.description",
+    "severity": "WARN",
+    "ruleType": {
+      "type": "ASSERT",
+      "operation": "present"
+    }
+  },
+  {
+    "name": "The OAS Specification must contain contact information",
+    "description": "The OAS Specification must contain contact information of the API Owner",
+    "oasVersion": "3.0",
+    "status": "ACTIVE",
+    "objectPath": "$.info.contact.email",
+    "severity": "ERROR",
+    "ruleType": {
+      "type": "ASSERT",
+      "operation": "present"
+    }
+  },
+  {
+    "name": "The API versioning should follow the patter 'v0' 'v1' 'v2'...",
+    "description": "The API versioning should follow the patter 'v0' 'v1' 'v2'... to track the version information of the API",
+    "oasVersion": "3.0",
+    "status": "ACTIVE",
+    "objectPath": "$.info.version",
+    "severity": "ERROR",
+    "ruleType": {
+      "type": "REGEX",
+      "operation": "MATCHES",
+      "regex": "[a-zA-Z]{1}\\d{1,2}\\.\\d{1,2}\\.\\d{1,3}"
+    }
+  },
+  {
+    "name": "The Update Operation in the API is advised to return Accepted 201 response code",
+    "description": "The PUT Operation in the API advised to return Accepted 201 response code instead of 200",
+    "oasVersion": "3.0",
+    "status": "ACTIVE",
+    "objectPath": "$.paths.*.put.responses.201~",
+    "severity": "ERROR",
+    "ruleType": {
+      "type": "ASSERT",
+      "operation": "present"
+    }
+  },
+
+
+  {
+    "name": "Server URL should follow https protocol",
+    "description": "Server URL should always follow https protocol to avoid exposing unsecure APIs",
+    "oasVersion": "3.0",
+    "status": "ACTIVE",
+    "objectPath": "$.servers.*.url",
+    "severity": "ERROR",
+    "ruleType": {
+      "type": "ASSERT",
+      "operation": "contains",
+      "value" : "https"
+    }
+  },
+  {
+    "name": "The reference object for request param componenet for 'CreditCardID' should be defined",
+    "description": "The reference object for request param componenet for 'CreditCardID' should be defined with value 'creditcardId'",
+    "oasVersion": "3.0",
+    "status": "ACTIVE",
+    "objectPath": "$.components.parameters.CreditCardID.name",
+    "severity": "ERROR",
+    "ruleType": {
+      "type": "ASSERT",
+      "operation": "equalTo",
+      "value" : "creditcardId"
+    }
+  },
+  {
+    "name": "No <script> tags in title",
+    "description": "The <script> tag should not be present in title as it might lead to injecting scripting attacks",
+    "oasVersion": "3.0",
+    "status": "ACTIVE",
+    "objectPath": "$.info.title",
+    "severity": "ERROR",
+    "ruleType": {
+      "type": "ASSERT",
+      "operation": "doesNotContain",
+      "value": "<script>"
+    }
+  },
+  {
+    "name": "The API Endpoint must contain the BIAN standard in the URL",
+    "description": "The API Endpoint must contain the BIAN standard in the URL to notify the consumers of BIAN standard",
+    "oasVersion": "3.0",
+    "status": "ACTIVE",
+    "objectPath": "$.servers.*.url",
+    "severity": "ERROR",
+    "ruleType": {
+      "type": "ASSERT",
+      "operation": "contains",
+      "value" : "BIAN-6"
+    }
+  },
+  {
+    "name": "The CreditCard/Initiate Operation in the API out to return a 402",
+    "description": "The CreditCard/Initiate Operation in the API out to return a 402 to denote payment required",
+    "oasVersion": "3.0",
+    "status": "ACTIVE",
+    "objectPath": "$.paths.['/CreditCard/Initiate'].post.responses.402~",
+    "severity": "ERROR",
+    "ruleType": {
+      "type": "ASSERT",
+      "operation": "present"
+    }
+  },
+  {
+    "name": "Test",
+    "description": "Test",
+    "oasVersion": "3.0",
+    "status": "ACTIVE",
+    "objectPath": "$.paths.*.post.requestBody.$ref",
+    "severity": "ERROR",
+    "ruleType": {
+      "type": "ASSERT",
+      "operation": "present"
+    }
+  }
+
+]
