@@ -147,7 +147,7 @@ public class LinterCommand implements Callable<Integer> {
 
 
 
-    public void writeFormattedSwaggerStr(String swaggerString) throws IOException {
+    private void writeFormattedSwaggerStr(String swaggerString) throws IOException {
         ValidateSchema validateSchema = new ValidateSchema();
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
@@ -157,7 +157,7 @@ public class LinterCommand implements Callable<Integer> {
     }
 
 
-    public String readFromFile(String filename) throws IOException {
+    private String readFromFile(String filename) throws IOException {
         BufferedReader br = new BufferedReader(
                 new InputStreamReader(getClass().getClassLoader().getResourceAsStream(filename)));
         StringBuilder sb = new StringBuilder();
