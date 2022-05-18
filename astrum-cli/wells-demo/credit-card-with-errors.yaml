@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: Credit Card
+  title: Credit Card <script>
   version: 10.0.0
   contact:
     name: Service Desk

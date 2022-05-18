@@ -113,18 +113,5 @@
       "type": "ASSERT",
       "operation": "present"
     }
-  },
-  {
-    "name": "Test",
-    "description": "Test",
-    "oasVersion": "3.0",
-    "status": "ACTIVE",
-    "objectPath": "$.paths.*.post.requestBody.$ref",
-    "severity": "ERROR",
-    "ruleType": {
-      "type": "ASSERT",
-      "operation": "present"
-    }
   }
-
 ]
