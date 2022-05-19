@@ -1,6 +1,8 @@
 package io.apiwiz.astrum.api.controller;
 
 
+
+
 import io.apiwiz.astrum.api.service.RuleService;
 import io.apiwiz.astrum.core.model.SwaggerLintingOutput;
 import io.apiwiz.astrum.rule.model.Rule;
@@ -19,7 +21,7 @@ import java.util.List;
 public class RuleController {
 
 	@Autowired
-    RuleService ruleService;
+    private RuleService ruleService;
 
 	@RequestMapping(value = "/rule", method = RequestMethod.POST)
 	public ResponseEntity<HttpStatus> createRules(@RequestBody Rule rule) {
@@ -47,17 +49,17 @@ public class RuleController {
 	}
 
 	@RequestMapping(value = "/rule/", method = RequestMethod.GET)
-	private ResponseEntity<List<Rule>> getAllRules() {
+	public ResponseEntity<List<Rule>> getAllRules() {
 		return new ResponseEntity<>(ruleService.getAllRules(), HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/lint", method = RequestMethod.POST, consumes = { "multipart/form-data" })
-	private ResponseEntity<?> lint(@RequestPart(value = "swaggerFile") MultipartFile swaggerFile) {
+	public ResponseEntity<?> lint(@RequestPart(value = "swaggerFile") MultipartFile swaggerFile) {
 		return new ResponseEntity<>(ruleService.lint(swaggerFile), HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/format", method = RequestMethod.POST, consumes = { "multipart/form-data" })
-	private ResponseEntity<?> formatSwaggerFile(@RequestPart(value = "swaggerFile") MultipartFile swaggerFile) {
+	public ResponseEntity<?> formatSwaggerFile(@RequestPart(value = "swaggerFile") MultipartFile swaggerFile) {
 		return new ResponseEntity<>(ruleService.format(swaggerFile), HttpStatus.OK);
 	}
 

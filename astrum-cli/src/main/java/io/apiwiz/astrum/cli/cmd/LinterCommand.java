@@ -44,7 +44,67 @@ public class LinterCommand implements Callable<Integer> {
     private boolean skipLinting;
 
 
-    @Override
+    public File getSwaggerFile() {
+		return swaggerFile;
+	}
+
+
+
+	public void setSwaggerFile(File swaggerFile) {
+		this.swaggerFile = swaggerFile;
+	}
+
+
+
+	public File getRulesFile() {
+		return rulesFile;
+	}
+
+
+
+	public void setRulesFile(File rulesFile) {
+		this.rulesFile = rulesFile;
+	}
+
+
+
+	public File getOutputFile() {
+		return outputFile;
+	}
+
+
+
+	public void setOutputFile(File outputFile) {
+		this.outputFile = outputFile;
+	}
+
+
+
+	public boolean isPrettyPrintSwagger() {
+		return prettyPrintSwagger;
+	}
+
+
+
+	public void setPrettyPrintSwagger(boolean prettyPrintSwagger) {
+		this.prettyPrintSwagger = prettyPrintSwagger;
+	}
+
+
+
+	public boolean isSkipLinting() {
+		return skipLinting;
+	}
+
+
+
+	public void setSkipLinting(boolean skipLinting) {
+		this.skipLinting = skipLinting;
+	}
+
+
+
+	@Override
     public Integer call() throws Exception {
         ValidateSchema validateSchema = new ValidateSchema();
         String swaggerString = FileUtils.readFileToString(swaggerFile, StandardCharsets.UTF_8);
