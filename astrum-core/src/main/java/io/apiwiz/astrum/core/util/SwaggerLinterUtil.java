@@ -3,7 +3,13 @@ package io.apiwiz.astrum.core.util;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import com.fasterxml.jackson.dataformat.yaml.YAMLGenerator;
 import io.apiwiz.astrum.core.impl.ValidateSchema;
+import io.swagger.v3.core.util.Yaml;
+
+import java.io.IOException;
 
 public class SwaggerLinterUtil {
 
@@ -60,6 +66,12 @@ public class SwaggerLinterUtil {
 		ObjectMapper objectMapper = new ObjectMapper();
 		JsonNode jsonNode = validateSchema.readNode(swaggerString);
 		String formattedSwaggerJson = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonNode);
+		return formattedSwaggerJson;
+	}
+
+	public static String formatSwaggerStr_YAML(String swaggerString) throws IOException {
+		ObjectNode node = Yaml.mapper().readValue(swaggerString, ObjectNode.class);
+		String formattedSwaggerJson = Yaml.pretty(node);
 		return formattedSwaggerJson;
 	}
 

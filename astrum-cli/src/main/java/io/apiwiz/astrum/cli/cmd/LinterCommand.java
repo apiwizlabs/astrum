@@ -13,6 +13,7 @@ import io.apiwiz.astrum.rule.model.Rule;
 import org.apache.commons.io.FileUtils;
 import picocli.CommandLine;
 import static io.apiwiz.astrum.core.util.SwaggerLinterUtil.formatSwaggerStr;
+import static io.apiwiz.astrum.core.util.SwaggerLinterUtil.formatSwaggerStr_YAML;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -112,6 +113,9 @@ public class LinterCommand implements Callable<Integer> {
         ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
 
         if(skipLinting) {
+            if(!swaggerString.startsWith("{")) {
+                System.out.println(formatSwaggerStr_YAML(swaggerString));
+            }
             System.out.println(formatSwaggerStr(swaggerString));
             return 0;
         }
@@ -137,7 +141,7 @@ public class LinterCommand implements Callable<Integer> {
             outputFile.createNewFile();
             objectWriter.writeValue(outputFile, lintingReports);
         } else {
-            System.out.println(objectWriter.writeValueAsString(lintingReports));
+            if(lintingReports.size() >0 ) System.out.println(objectWriter.writeValueAsString(lintingReports));
         }
 
         writeFormattedSwaggerStr(swaggerString);

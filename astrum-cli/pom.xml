@@ -1,54 +1,58 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<parent>
-		<artifactId>astrum</artifactId>
-		<groupId>io.apiwiz.astrum</groupId>
-		<version>0.1</version>
-	</parent>
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>astrum</artifactId>
+        <groupId>io.apiwiz.astrum</groupId>
+        <version>0.1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
 
-	<artifactId>astrum-cli</artifactId>
 
-	<name>${project.groupId}:${project.artifactId}</name>
-	<description>
+    <artifactId>astrum-cli</artifactId>
+
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>
         A flexible JSON/YAML linter for creating automated style guides, with baked in support for OpenAPI v2 and v3.
     </description>
-	<url>https://github.com/apiwizlabs/astrum</url>
+    <url>https://github.com/apiwizlabs/astrum</url>
 
-	<licenses>
-		<license>
-			<name>Apache License 2.0</name>
-			<url>https://github.com/apiwizlabs/astrum/blob/main/LICENSE</url>
-		</license>
-	</licenses>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+            <url>https://github.com/apiwizlabs/astrum/blob/main/LICENSE</url>
+        </license>
+    </licenses>
 
-	<developers>
-		<developer>
-			<name>Balaji Vijayan</name>
-			<email>balaji.vijayan@itorix.com</email>
-			<organization>Apiwiz</organization>
-			<organizationUrl>https://apiwiz.io</organizationUrl>
-		</developer>
-	</developers>
+    <developers>
+        <developer>
+            <name>Balaji Vijayan</name>
+            <email>balaji.vijayan@itorix.com</email>
+            <organization>Apiwiz</organization>
+            <organizationUrl>https://apiwiz.io</organizationUrl>
+        </developer>
+    </developers>
 
-	<properties>
-		<maven.compiler.source>11</maven.compiler.source>
-		<maven.compiler.target>11</maven.compiler.target>
-	</properties>
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <slf4j.version>1.7.36</slf4j.version>
+    </properties>
 
-	<dependencies>
-		<dependency>
-			<groupId>info.picocli</groupId>
-			<artifactId>picocli</artifactId>
-			<version>4.6.2</version>
-		</dependency>
+    <dependencies>
+        <dependency>
+            <groupId>info.picocli</groupId>
+            <artifactId>picocli</artifactId>
+            <version>4.6.2</version>
+        </dependency>
 
-		<dependency>
-			<groupId>io.apiwiz.astrum</groupId>
-			<artifactId>astrum-core</artifactId>
-			<version>0.1</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+        <dependency>
+            <groupId>io.apiwiz.astrum</groupId>
+            <artifactId>astrum-core</artifactId>
+            <version>0.1</version>
+        </dependency>
+
+        		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
@@ -64,10 +68,23 @@
 			<scope>test</scope>
 		</dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
 
-	</dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
 
-	<build>
+
+    </dependencies>
+
+    <build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -134,6 +151,3 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
-</project>
