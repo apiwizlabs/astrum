@@ -4,16 +4,13 @@ import com.fasterxml.jackson.core.JsonLocation;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.jayway.jsonpath.*;
 import io.apiwiz.astrum.core.impl.CustomJsonNodeFactory;
 import io.apiwiz.astrum.core.impl.CustomParserFactory;
 import io.apiwiz.astrum.core.model.Instance;
 import io.apiwiz.astrum.core.model.SchemaValidationError;
 import io.apiwiz.astrum.core.model.SwaggerLintingReport;
 import io.apiwiz.astrum.core.util.SwaggerLinterUtil;
-import com.jayway.jsonpath.Configuration;
-import com.jayway.jsonpath.DocumentContext;
-import com.jayway.jsonpath.JsonPath;
-import com.jayway.jsonpath.Option;
 import com.jayway.jsonpath.spi.json.JacksonJsonNodeJsonProvider;
 import com.jayway.jsonpath.spi.mapper.JacksonMappingProvider;
 
@@ -41,12 +38,16 @@ public class SchemaValidationErrorConverter {
         DocumentContext document = JsonPath.parse(swaggerJson, configuration);
         Instance instance = error.getInstance();
         if (instance != null) {
+            try{
             ArrayNode findings = document.read(SwaggerLinterUtil.getJsonPathFromPointer(instance.getPointer()));
 
             for (JsonNode finding : findings) {
                 JsonLocation location = factory.getLocationForNode(finding);
                 int lineNum = location.getLineNr();
                 report.setLineNumber(lineNum);
+            }
+        } catch (PathNotFoundException p) {
+
             }
         }
 

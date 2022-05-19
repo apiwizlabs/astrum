@@ -113,5 +113,17 @@
       "type": "ASSERT",
       "operation": "present"
     }
+  },
+  {
+    "name": "The POST operation should contain request body",
+    "description": "The POST operation should contain request body",
+    "oasVersion": "3.0",
+    "status": "ACTIVE",
+    "objectPath": "$.paths.*.post.requestBody",
+    "severity": "ERROR",
+    "ruleType": {
+      "type": "ASSERT",
+      "operation": "present"
+    }
   }
 ]

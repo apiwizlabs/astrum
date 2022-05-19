@@ -88,10 +88,5 @@
       "operation": "MATCHES",
       "regex": ".*[./]$"
     }
-  },
-
-
-
-
-
+  }
 ]

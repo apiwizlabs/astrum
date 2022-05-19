@@ -19,7 +19,7 @@ paths:
       operationId: Initiate
       parameters: []
       requestBody:
-        $ref: '#/components/requestBodies/InitiateCreditCardFacilityRequest'
+        
       responses:
         200:
           description: Success

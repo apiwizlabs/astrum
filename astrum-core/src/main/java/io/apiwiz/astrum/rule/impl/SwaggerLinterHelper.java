@@ -149,6 +149,7 @@ public class SwaggerLinterHelper {
 	private void assertPresent(List<SwaggerLintingReport> reportList, Rule rule, JsonNode finding) {
 		try {
 			Assert.assertNotNull(finding.asText());
+			if("null".equalsIgnoreCase(finding.asText())) throw new AssertionError();
 		} catch (AssertionError ex) {
 			generateLintingReport(reportList, rule, finding);
 		}

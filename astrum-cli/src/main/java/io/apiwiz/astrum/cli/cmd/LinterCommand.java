@@ -156,8 +156,12 @@ public class LinterCommand implements Callable<Integer> {
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
         JsonNode jsonNode = validateSchema.readNode(swaggerString);
-        File formattedSwaggerFile = new File(System.getProperty("user.dir"), "formatted" + "_" + swaggerFile.getName());
+        File formattedSwaggerFile = new File(System.getProperty("user.dir"), "formatted" + "_" + getWithoutExtension(swaggerFile.getName()) + ".json");
         objectWriter.writeValue(formattedSwaggerFile, jsonNode);
+    }
+
+    private String getWithoutExtension(String fileFullPath){
+        return fileFullPath.substring(0, fileFullPath.lastIndexOf('.'));
     }
 
 
