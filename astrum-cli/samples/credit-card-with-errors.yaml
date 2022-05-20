@@ -18,8 +18,6 @@ paths:
       description: InCR Initiate a new card account
       operationId: Initiate
       parameters: []
-      requestBody:
-        
       responses:
         200:
           description: Success
