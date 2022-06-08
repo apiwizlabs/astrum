@@ -40,6 +40,65 @@ Astrum is entirely built on Java and consists of three modules,
 
 ![Architecture](resources/astrum-arch.png)
 
+
+
+## :gift: What are Astrum rules?
+
+Astrum rules are the common set of directives which the user can define to identify the occurences of suspicisous and inept data in the open api specification.
+
+There are two types of rules which the astrum supports which can be represented using JSON.
+
+ - Regex Rule 
+ - Assertion Rule
+
+### Regex Rule
+A Regex rule takes a regular expression and match it against the  open api definition. Let's say as a API designer I want to style all my operation Ids to follow camel casing, we can represent it using the regex rule as below.
+
+This rule applies the regex value defined in the "regex" field against the value present in the object path of the operation id and reports if they don't match camel casing.  
+
+    {  
+      "name": "Operation Id should be Camel Case",  
+      "description": "Operation Id should be Camel Case ",  
+      "oasVersion": "2.0",  
+      "status": "ACTIVE",  
+      "objectPath": "$.paths.*.*.operationId",  
+      "severity": "INFO",  
+      "ruleType": {  
+        "type": "REGEX",  
+      "operation": "MATCHES",  
+      "regex": "^[a-zA-Z]*$"  
+      }  
+    }
+
+### Assertion Rule
+Assertion rule are forceful statements that can be applied against the open api definitions. For an example, As a an API security expert, I want all my APIs to be designed to run only using https protocol. Let's see how they can be achived using the Assertion rule.
+
+    {  
+      "name": "All Schemes Should be https",  
+      "description": "All Schemes Should be https",  
+      "oasVersion": 2.0,  
+      "status": "ACTIVE",  
+      "objectPath": "$.schemes.*",  
+      "severity": "WARN",  
+      "ruleType": {  
+        "type": "ASSERT",  
+      "operation": "equalTo",  
+      "value": "https"  
+      }
+
+The above assertion rule takes the operation 'equalTo' and checks whether all my scheme are represented as 'https' failure of this assertion is captured in the linting report.
+
+Assertion Rules supports below operations which can be used to apply agains the API definitions
+
+ 1. equalTo
+ 2. present
+ 3. doesNotContain
+ 4. absent
+ 5. contains
+ 6. doesNotMatch
+
+
+
 ## 🪝 Usage
 
 **Pre-Requisite**
